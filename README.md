@@ -33,7 +33,7 @@ You can also include the non-minified versions for development and debugging pur
 Flags are square type of label or tag with a one or two letter abbreviation inside. These are
 typically used for creating tags or markers for representing specific items in a small space.
 
-![Alt text](_images/flag-default.png?raw=true "default flag")
+![Alt text](https://raw.githubusercontent.com/PierianDx/pdx-bootstrap/master/_images/flag-default.png?raw=true "default flag")
 
 ```html
 <div class="flag">
@@ -44,7 +44,7 @@ typically used for creating tags or markers for representing specific items in a
 Currently there are two specific types of flags available that represent artifacts and
 benign polymorphisms.
 
-![Alt text](_images/flag-types.png?raw=true "flag types")
+![Alt text](https://raw.githubusercontent.com/PierianDx/pdx-bootstrap/master/_images/flag-types.png?raw=true "flag types")
 
 ```html
 <div class="flag flag--benign-polymorphism">
@@ -63,7 +63,7 @@ The flag dropdown is a multiselect dropdown for allowing a user
 to select one or more flags. Flags can be displayed next to a text description for each item. Selected items will have a
 checkmark to the right of the item showing they are selected.
 
-![Alt text](_images/flag-dropdown.png?raw=true "flag dropdown select")
+![Alt text](https://raw.githubusercontent.com/PierianDx/pdx-bootstrap/master/_images/flag-dropdown.png?raw=true "flag dropdown select")
 
 ### Markup
 
@@ -132,7 +132,7 @@ The status dropdown is a single-select dropdown for allowing a user
 to select a particular status. The toggle itself should always represent the
 currently selected status (~uses the bookmark icon from FontAwesome 5~).
 
-![Alt text](_images/status-dropdown.png?raw=true "status dropdown select")
+![Alt text](https://raw.githubusercontent.com/PierianDx/pdx-bootstrap/master/_images/status-dropdown.png?raw=true "status dropdown select")
 
 ### Markup
 
@@ -193,8 +193,8 @@ This component is a simple sliding toggle to represent an on/off or true/false
 state. Clicking anywhere on the toggle will cause it to change state by sliding the
 indicator in the opposite direction.
 
-![Alt text](_images/toggle-off.png?raw=true "toggle off state")
-![Alt text](_images/toggle-on.png?raw=true "toggle on state")
+![Alt text](https://raw.githubusercontent.com/PierianDx/pdx-bootstrap/master/_images/toggle-off.png?raw=true "toggle off state")
+![Alt text](https://raw.githubusercontent.com/PierianDx/pdx-bootstrap/master/_images/toggle-on.png?raw=true "toggle on state")
 
 ### Markup
 
