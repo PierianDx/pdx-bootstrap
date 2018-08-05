@@ -1,0 +1,42 @@
+/**
+ * Flags are box-like labels with a one or two letter 
+ * abbreviation inside
+ */
+@import "colors";
+@import "utils";
+
+/**
+ * Flag styles
+ */
+.flag {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background-color: #ddd;
+  color: #4f4f4f;
+  border-radius: 4px;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/**
+ * Specific flags
+ */
+.flag--artifact {
+  //   background-color: #f2c94c;
+  //   color: #4f4f4f;
+  background-color: color("flag", "artifact", "background");
+  color: color("flag", "artifact", "color");
+}
+.flag--benign-polymorphism {
+  //   background-color: #2d9cdb;
+  //   color: #fff;
+  background-color: color("flag", "benign-polymorphism", "background");
+  color: color("flag", "benign-polymorphism", "color");
+}

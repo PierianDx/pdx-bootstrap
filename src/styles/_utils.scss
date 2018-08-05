@@ -1,0 +1,5 @@
+@import "colors";
+
+@function color($type, $name, $kind: "color") {
+  @return map-get(map-get(map-get($colors, $type), $name), $kind);
+}

@@ -1,0 +1,29 @@
+// colors.scss
+// Standardized colors
+
+$colors: (
+  status: (
+    relevant: (
+      color: #6fcf97,
+      background: transparent
+    ),
+    irrelevant: (
+      color: #f37a7a,
+      background: transparent
+    ),
+    unknown: (
+      color: #dddddd,
+      background: transparent
+    )
+  ),
+  flag: (
+    artifact: (
+      color: #4f4f4f,
+      background: #f2c94c
+    ),
+    benign-polymorphism: (
+      color: #fff,
+      background: #2d9cdb
+    )
+  )
+);

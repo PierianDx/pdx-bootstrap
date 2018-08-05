@@ -1,0 +1,112 @@
+/**
+ * Bootstrap compatible toggle switch input
+ *
+ */
+.toggle-switch {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+
+.toggle {
+  display: inline-block;
+  width: 2em;
+  height: 1em;
+  border-radius: 0.5em;
+  position: relative;
+  cursor: pointer;
+  background: #ccc;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 0.9em;
+    height: 0.9em;
+    margin-top: 0.05em;
+    margin-left: 0.05em;
+    border-radius: 1em;
+    background: #f5f5f5;
+    box-shadow: 5px 0px 28px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 0.2s ease-in;
+  }
+
+  &.checked {
+    cursor: pointer;
+    background: #2ecc71;
+    transition: transform 0.2s ease-in;
+
+    &:before {
+      transform: translateX(1em);
+    }
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    background: rgba(204, 204, 204, 0.5);
+
+    &:before {
+      background: rgb(245, 245, 245);
+    }
+  }
+
+  > label {
+    position: absolute;
+    top: 50%;
+    right: -16px;
+    white-space: nowrap;
+    transform: translate(100%, -50%);
+    font-weight: 400;
+  }
+}
+
+//
+// .toggle > label {
+//   position: absolute;
+//   top: 50%;
+//   right: -16px;
+//   white-space: nowrap;
+//   transform: translate(100%, -50%);
+//   font-weight: 400;
+// }
+// .toggle {
+//   display: inline-block;
+//   width: 2em;
+//   height: 1em;
+//   border-radius: 0.5em;
+//   position: relative;
+//   cursor: pointer;
+//   background: #ccc;
+// }
+
+// .toggle:before {
+//   content: " ";
+//   position: absolute;
+//   width: 0.9em;
+//   height: 0.9em;
+//   margin-top: 0.05em;
+//   margin-left: 0.05em;
+//   border-radius: 1em;
+//   background: #f5f5f5;
+//   box-shadow: 5px 0px 28px -9px rgba(0, 0, 0, 0.75);
+//   transition: transform 0.2s ease-in;
+// }
+// .toggle.checked {
+//   cursor: pointer;
+//   background: #2ecc71;
+//   transition: transform 0.2s ease-in;
+// }
+// .toggle.checked:before {
+//   transform: translateX(1em);
+// }
+
+// .toggle.disabled,
+// .toggle[disabled] {
+//   cursor: default;
+//   background: rgba(204, 204, 204, 0.5);
+// }
+
+// .toggle.disabled:before,
+// .toggle[disabled]:before {
+//   background: rgb(245, 245, 245);
+// }

@@ -1,0 +1,107 @@
+/**
+ * Bootstrap status flag single select dropdown
+ */
+@import "colors";
+@import "utils";
+
+/* Individual icon styles */
+.status--relevant {
+  color: color("status", "relevant");
+}
+.status--irrelevant {
+  color: color("status", "irrelevant");
+}
+.status--unknown {
+  color: color("status", "unknown");
+}
+.fa-bookmark {
+  position: relative;
+}
+
+/* 
+ * relevant and irrelevant icons have an overlay
+ * to help those with red/green color blindness 
+ * distinguish between the two
+ */
+%icon-overlay {
+  position: absolute;
+  color: white;
+  font-weight: 700;
+  font-size: 0.6em;
+  left: 50%;
+  top: 50%;
+}
+
+.fa-bookmark.status--irrelevant:after {
+  @extend %icon-overlay;
+  content: "\f067";
+  transform: translate(-50%, -55%) rotate(45deg);
+}
+.fa-bookmark.status--relevant:after {
+  @extend %icon-overlay;
+  content: "\f00c";
+  transform: translate(-50%, -55%);
+}
+
+/*
+ * Dropdown Status Styles
+ */
+.dropdown-status {
+  display: inline-block;
+
+  > .dropdown-menu {
+    padding: 5px 16px;
+    width: fit-content;
+
+    > .li {
+      display: inline-block;
+      padding-right: 8px;
+
+      &:last-of-type {
+        padding-right: 0px;
+      }
+
+      > a {
+        display: inline-block;
+        padding: 0;
+      }
+    }
+  }
+
+  &.open {
+    > .dropdown-menu {
+      display: inline-block;
+      min-width: auto;
+      white-space: nowrap;
+    }
+  }
+}
+
+//
+// .dropdown.dropdown-status {
+//   display: inline-block;
+// }
+// /*
+//  * dropdown-status dropdown menu styles
+//  */
+// .dropdown.dropdown-status > .dropdown-menu {
+//   padding: 5px 16px;
+//   /*   display: inline-block; */
+//   width: fit-content;
+// }
+// .dropdown.dropdown-status.open > .dropdown-menu {
+//   display: inline-block;
+//   min-width: auto;
+//   white-space: nowrap;
+// }
+// .dropdown.dropdown-status > .dropdown-menu > li {
+//   display: inline-block;
+//   padding-right: 8px;
+// }
+// .dropdown.dropdown-status > .dropdown-menu > li > a {
+//   display: inline-block;
+//   padding: 0;
+// }
+// .dropdown.dropdown-status > .dropdown-menu li:last-of-type {
+//   padding-right: 0px;
+// }
