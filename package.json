@@ -1,6 +1,6 @@
 {
   "name": "@pieriandx/pdx-bootstrap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "PierianDx Bootstrap Components",
   "main": "dist/pdx-bootstrap.js",
   "repository": "https://github.com/PierianDx/pdx-bootstrap",
