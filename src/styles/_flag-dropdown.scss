@@ -11,7 +11,7 @@
  * Dropdown Flag styles
  */
 .dropdown-flag {
-  &[data-toggle] {
+  [data-toggle] {
     color: #bdbdbd;
   }
 
