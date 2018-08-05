@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "PierianDx Bootstrap Components",
   "main": "dist/pdx-bootstrap.js",
+  "repository": "https://github.com/PierianDx/pdx-bootstrap",
+  "unpkg": "dist/pdx-bootstrap.min.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "webpack --profile --colors",
     "build:prod": "webpack --env prod --progress --profile --colors",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build"
   },
   "keywords": [],
   "author": "",
