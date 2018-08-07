@@ -24,8 +24,8 @@ the browser. You can include the javascript and styles via a `<script>` tag by
 adding the following to the head of your HTML document.
 
 ```html
-<script src="https://unpkg.com/@pieriandx/pdx-bootstrap@1.0.0/dist/pdx-bootstrap.min.js" />
-<link rel="stylesheet" href="https://unpkg.com/@pieriandx/pdx-bootstrap@1.0.0/dist/pdx-bootstrap.min.css" />
+<script src="https://unpkg.com/@pieriandx/pdx-bootstrap@latest/dist/pdx-bootstrap.min.js" />
+<link rel="stylesheet" href="https://unpkg.com/@pieriandx/pdx-bootstrap@latest/dist/pdx-bootstrap.min.css" />
 ```
 
 You can also include the non-minified versions for development and debugging purposes.

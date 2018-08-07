@@ -35,6 +35,7 @@ class StatusDropdown {
       "pdx.statusdropdown.change",
       this.$element.data("selected")
     );
+    ev.preventDefault();
   }
 
   setSelected($selected) {
