@@ -4,6 +4,9 @@ body,
 html {
   margin: 1em; }
 
+body {
+  padding-top: 70px; }
+
 /* Normalize styles */
 *,
 *:before,
