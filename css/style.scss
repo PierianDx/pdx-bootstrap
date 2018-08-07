@@ -1,18 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800');
-@import url('https://fonts.googleapis.com/css?family=Hind:400,500,600');
+---
+# Primary SaSS file
+---
 
-body, html {
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Hind:400,500,600");
+body,
+html {
   margin: 16px;
-}
-
-/* Normalize styles */
-*, *:before, *:after {
+} /* Normalize styles */
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 16px;
   line-height: 1.5;
   color: #444;
@@ -22,33 +26,28 @@ code,
 kbd,
 samp,
 tt {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
-
 hr {
   margin: 0;
   margin-bottom: 1em;
-}
-
-//----------------------
+} // ----------------------
 .example {
   position: relative;
   margin-top: 1em;
   border: 1px solid #ccc;
   border-radius: 4px 4px 0px 0px;
-  padding: 2em 1em 1.5em 1em;
-  // padding-top: 1.5em;
-  
+  padding: 2em 1em 1.5em 1em; // padding-top: 1.5em;
   &:after {
-    content: 'Example';
+    content: "Example";
     position: absolute;
-    top: .5em;
+    top: 0.5em;
     left: 1em;
     text-transform: uppercase;
     color: #ccc;
     letter-spacing: 1px;
     font-weight: 700;
-    font-size: .75em;
+    font-size: 0.75em;
   }
 }
 pre.example-code {
@@ -65,51 +64,61 @@ code {
   border-radius: 4px;
 }
 .example > .group {
-  margin: .5em 0;
-}
-
-//------------------------
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Hind';
+  margin: 0.5em 0;
+} // ------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Hind";
   margin-top: 0;
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
-.h1,.h2,.h3,.h4,.h5,.h6 {
-  font-family: 'Hind';
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Hind";
   margin: 0;
   padding: 0;
 }
-h1,.h1 {
+h1,
+.h1 {
   font-size: 4rem;
   line-height: 1.2;
 }
-h2,.h2 {
+h2,
+.h2 {
   font-size: 3.5rem;
   line-height: 1.2;
 }
-h3,.h3 {
+h3,
+.h3 {
   font-size: 3rem;
   line-height: 1.2;
 }
-h4,.h4 {
+h4,
+.h4 {
   font-size: 2.5rem;
   line-height: 1.5;
 }
-h5,.h5 {
+h5,
+.h5 {
   font-size: 2.1rem;
   line-height: 1.5;
 }
-h6,.h6 {
+h6,
+.h6 {
   font-size: 1.75rem;
   line-height: 1.5;
 }
 p {
   margin-bottom: 1em;
 }
-
-
-
 /* to use FontAwesome i pseudo elements */
 .icon::after {
   display: inline-block;
@@ -118,8 +127,6 @@ p {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
-
-
 .flag {
   position: relative;
   display: inline-block;
@@ -134,7 +141,6 @@ p {
   font-weight: 400;
   line-height: 2;
 }
-
 .flag-large {
   width: 2.25em;
   height: 2.25em;
@@ -142,23 +148,21 @@ p {
   font-weight: 400;
   line-height: 2.25;
 }
-
 .flag-small {
   width: 1.75em;
   height: 1.75em;
-  font-size: .75em;
+  font-size: 0.75em;
   font-weight: 400;
   line-height: 2;
 }
-
 .flag-default {
   background-color: #777;
 }
 .flag--artifact {
-  background-color: #F2C94C;
-  color: #4F4F4F;
+  background-color: #f2c94c;
+  color: #4f4f4f;
 }
 .flag--benign-polymorphism {
-  background-color: #2D9CDB;
+  background-color: #2d9cdb;
   color: #fff;
 }
