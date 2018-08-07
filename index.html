@@ -1,1 +1,145 @@
-Test page
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pierian Styles + Components</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js" data-manual></script>
+
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css'>
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <h1>Typography</h1>
+  <hr/>
+  <h2>Headings</h2>
+  <p>
+    All HTML headings are available
+    <code>&lt;h1></code> through
+    <code>&lt;h6></code>, and classes
+    <code>.h1</code> through
+    <code>.h6</code> are available for applying those same stylings to other elements or for inline use.
+  </p>
+  <p>
+    Pierian uses the "Hind" font face for display fonts.</p>
+
+  <div class="example">
+    <h1 class="h1">Heading 1</h1>
+    <h2 class="h2">Heading 2</h2>
+    <h3 class="h3">Heading 3</h3>
+    <h4 class="h4">Heading 4</h4>
+    <h5 class="h5">Heading 4</h5>
+    <h6 class="h6">Heading 4</h6>
+  </div>
+  <pre class="example-code">
+<code class="language-html">
+  <h1 class="h1">Heading 1</h1>
+  <h2 class="h2">Heading 2</h2>
+  <h3 class="h3">Heading 3</h3>
+  <h4 class="h4">Heading 4</h4>
+  <h5 class="h5">Heading 4</h5>
+  <h6 class="h6">Heading 4</h6>
+</code>
+</pre>
+
+  <h2>Body Copy</h2>
+  <p>
+    We set our base font-size to
+    <b>16px</b> with a line-height of
+    <b>1.5</b> for better readability. This is applied to the
+    <code>body</code> and all paragraphs. In addition,
+    <code>p</code> (paragraphs) receive a bottom margin of the base font size (
+    <em>
+      <b>16px</b> by default</em>).
+  </p>
+
+  <div class="example">
+    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+      ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus
+      auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+      Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis
+      mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+  </div>
+  <pre class="example-code">
+<code class="language-html">
+  <p>...</p>
+</code>
+</pre>
+
+  <h1>Components</h1>
+  <hr/>
+
+  <h2>Status Flag</h2>
+  <p>
+    Use
+    <code>.flag</code> for a fixed width/height label of one or two letters to denote a status flag.
+  </p>
+
+  <p>
+    You can use `.flag` elements inline, though they are larger than any inline line-height that might be used.
+  </p>
+  <div class="example">
+    <p>This is a line of text with a
+      <span class="flag flag-default">XX</span> flag in it.</p>
+  </div>
+  <pre class="example-code">
+<code class="language-html">
+    <p>This is a line of text with a <span class="flag flag-default">XX</span> flag in it.</p>
+</code>
+</pre>
+
+  <p>You can use
+    <code>.flag</code>`s in various sizes as well by using the
+    <code>.flag-small</code> or
+    <code>.flag-large</code>
+
+    <div class="example">
+      <div class="group">
+        <span class="flag flag-large flag-default">?</span>
+        <span class="flag flag-large flag--benign-polymorphism">BP</span>
+        <span class="flag flag-large flag--artifact">A</span>
+      </div>
+      <div class="group">
+        <div class="flag flag-default">?</div>
+        <div class="flag flag--benign-polymorphism">BP</div>
+        <div class="flag flag--artifact">A</div>
+      </div>
+      <div class="group">
+        <div class="flag flag-default flag-small">?</div>
+        <div class="flag flag-small flag--benign-polymorphism">BP</div>
+        <div class="flag flag-small flag--artifact">A</div>
+      </div>
+    </div>
+    <pre class="example-code">
+<code class="language-html">
+<div class="group">
+  <span class="flag flag-large flag-default">?</span>
+  <span class="flag flag-large flag--benign-polymorphism">BP</span>
+  <span class="flag flag-large flag--artifact">A</span>
+</div>
+<div class="group">
+  <div class="flag flag-default">?</div>
+  <div class="flag flag--benign-polymorphism">BP</div>
+  <div class="flag flag--artifact">A</div>
+</div>
+<div class="group">
+  <div class="flag flag-default flag-small">?</div>
+  <div class="flag flag-small flag--benign-polymorphism">BP</div>
+  <div class="flag flag-small flag--artifact">A</div>
+</div>
+</code>
+</pre>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
