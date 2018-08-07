@@ -33,7 +33,20 @@ tt {
 hr {
   margin: 0;
   margin-bottom: 1em;
-} // ----------------------
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+// DOCS ONLY ----------------------
 .example {
   position: relative;
   margin-top: 1em;
@@ -65,9 +78,65 @@ code {
   background-color: #f9f2f4;
   border-radius: 4px;
 }
+pre[class*="language-"] {
+  padding: 0;
+}
 .example > .group {
   margin: 0.5em 0;
-} // ------------------------
+}
+/*
+ * Callouts
+ *
+ * Not quite alerts, but custom and helpful notes for folks reading the docs.
+ * Requires a base and modifier class.
+ */
+
+/* Common styles for all types */
+.callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+.callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.callout p:last-child {
+  margin-bottom: 0;
+}
+.callout code {
+  border-radius: 3px;
+}
+
+/* Tighten up space between multiple callouts */
+.callout + .callout {
+  margin-top: -5px;
+}
+
+/* Variations */
+.callout-danger {
+  border-left-color: #ce4844;
+}
+.callout-danger h4 {
+  color: #ce4844;
+}
+.callout-warning {
+  border-left-color: #aa6708;
+}
+.callout-warning h4 {
+  color: #aa6708;
+}
+.callout-info {
+  border-left-color: #1b809e;
+}
+.callout-info h4 {
+  color: #1b809e;
+}
+
+// DOCS ONLY ------------------------
+
 h1,
 h2,
 h3,

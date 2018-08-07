@@ -9,6 +9,7 @@
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css'>
+  <link rel='stylesheet' href='https://unpkg.com/@pieriandx/pdx-bootstrap@1.0.4/dist/pdx-bootstrap.css'>
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -30,6 +31,15 @@
 
   <h1>Typography</h1>
   <hr/>
+  <div class="callout callout-warning">
+    <h4>Future Spec</h4>
+    <p>The typography styling here is currently not included in the
+      <code>pdx-bootstrap</code> library. This is intended for a future release as we make efforts toward a more complete style and design guide to
+      give consistency across development. You can copy the styles from this page directly if you would like to try them,
+      however.
+    </p>
+  </div>
+
   <h2>Headings</h2>
   <p>
     All HTML headings are available
@@ -50,15 +60,15 @@
     <h6 class="h6">Heading 4</h6>
   </div>
   <pre class="example-code">
-<code class="language-html">
-  <h1 class="h1">Heading 1</h1>
-  <h2 class="h2">Heading 2</h2>
-  <h3 class="h3">Heading 3</h3>
-  <h4 class="h4">Heading 4</h4>
-  <h5 class="h5">Heading 4</h5>
-  <h6 class="h6">Heading 4</h6>
-</code>
-</pre>
+    <code class="language-html">
+      <h1 class="h1">Heading 1</h1>
+      <h2 class="h2">Heading 2</h2>
+      <h3 class="h3">Heading 3</h3>
+      <h4 class="h4">Heading 4</h4>
+      <h5 class="h5">Heading 4</h5>
+      <h6 class="h6">Heading 4</h6>
+    </code>
+  </pre>
 
   <h2>Body Copy</h2>
   <p>
@@ -81,10 +91,10 @@
       mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
   </div>
   <pre class="example-code">
-<code class="language-html">
-  <p>...</p>
-</code>
-</pre>
+    <code class="language-html">
+      <p>...</p>
+    </code>
+  </pre>
 
   <h1>Components</h1>
   <hr/>
@@ -103,55 +113,329 @@
       <span class="flag flag-default">XX</span> flag in it.</p>
   </div>
   <pre class="example-code">
-<code class="language-html">
-    <p>This is a line of text with a <span class="flag flag-default">XX</span> flag in it.</p>
-</code>
-</pre>
+    <code class="language-html">
+        <p>This is a line of text with a <span class="flag flag-default">XX</span> flag in it.</p>
+    </code>
+  </pre>
 
   <p>You can use
     <code>.flag</code>`s in various sizes as well by using the
     <code>.flag-small</code> or
     <code>.flag-large</code>
+  </p>
+  <div class="example">
+    <div class="group">
+      <span class="flag flag-large flag-default">?</span>
+      <span class="flag flag-large flag--benign-polymorphism">BP</span>
+      <span class="flag flag-large flag--artifact">A</span>
+    </div>
+    <div class="group">
+      <div class="flag flag-default">?</div>
+      <div class="flag flag--benign-polymorphism">BP</div>
+      <div class="flag flag--artifact">A</div>
+    </div>
+    <div class="group">
+      <div class="flag flag-default flag-small">?</div>
+      <div class="flag flag-small flag--benign-polymorphism">BP</div>
+      <div class="flag flag-small flag--artifact">A</div>
+    </div>
+  </div>
+  <pre class="example-code">
+  <code class="language-html">
+    <div class="group">
+      <span class="flag flag-large flag-default">?</span>
+      <span class="flag flag-large flag--benign-polymorphism">BP</span>
+      <span class="flag flag-large flag--artifact">A</span>
+    </div>
+    <div class="group">
+      <div class="flag flag-default">?</div>
+      <div class="flag flag--benign-polymorphism">BP</div>
+      <div class="flag flag--artifact">A</div>
+    </div>
+    <div class="group">
+      <div class="flag flag-default flag-small">?</div>
+      <div class="flag flag-small flag--benign-polymorphism">BP</div>
+      <div class="flag flag-small flag--artifact">A</div>
+    </div>
+    </code>
+</pre>
 
-    <div class="example">
-      <div class="group">
-        <span class="flag flag-large flag-default">?</span>
-        <span class="flag flag-large flag--benign-polymorphism">BP</span>
-        <span class="flag flag-large flag--artifact">A</span>
+  <h2>Flag Dropdown</h2>
+  <p>
+    The flag dropdown is a specific implementation of the standard boostrap dropdown menu. It allows multiple selections. The
+    flag dropdown uses all the standard bootstrap dropdown classes with the addition of the
+    <code>.dropdown-flag</code> class on the
+    <code>.dropdown</code> element as well. It must also have an element with the
+    <code>data-toggle="dropdown"</code> attribute to trigger the dropdown.
+  </p>
+  <div class="example">
+    <div class="dropdown dropdown-flag" data-target="dropdown">
+      <span data-toggle="dropdown">
+        <i id="dropdownMenu1" class="fas fa-plus-circle"></i>
+        Click to view dropdown
+      </span>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation" class="selected">
+          <a role="menuitem" tabindex="-1" href="#" id="benign-polymorphism">
+            <span class="flag flag--benign-polymorphism">BP</span>
+            Benign Polymorphism
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#" id="artifact">
+            <span class="flag flag--artifact selected">A</span>
+            Artifact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <pre class="example-code">
+    <code class="language-html">
+    <div class="dropdown dropdown-flag" data-target="dropdown">
+      <i id="dropdownMenu1" data-toggle="dropdown" class="fas fa-plus-circle"></i>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation" class="selected">
+          <a role="menuitem" tabindex="-1" href="#" id="benign-polymorphism">
+            <div class="flag flag--benign-polymorphism">
+              <span>BP</span>
+            </div>
+            Benign Polymorphism
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#" id="artifact">
+            <div class="flag flag--artifact selected">
+              <span>A</span>
+            </div>
+            Artifact
+          </a>
+        </li>
+      </ul>
+    </div>
+    </code>
+  </pre>
+
+  <h3>Usage</h3>
+  <p>The flag dropdown can be activated using the following javascript</p>
+  <pre><code class="language-javascript">
+    $('.dropdown-flag').flagDropdown();
+  </code></pre>
+
+  <h3>Events</h3>
+  <p>
+    The flag dropdown emits the same events as the standard bootstrap dropdown but also emits an event when items are selected.
+  </p>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Event Type</th>
+        <th>Description</th>
+        <th>Params</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>pdx.flagdropdown.change</td>
+        <td>This event fires immediately when an item in the
+          <code>.dropdown-menu</code> is selected or unselected</td>
+        <td>
+          <ul>
+            <li>
+              <code>{Event}</code> - the event object</li>
+            <li>
+              <code>{...String}</code> - multiple arguments, the
+              <code>id</code> of each selected item</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pre><code class="language-javascript">
+    $('.dropdown-flag').on('pdx.flagdropdown.change', function(ev /* selected id, ... */) {
+      const ids = Array.from(arguments).slice(1);  // get selected ids as an array
+      // ...
+    });
+  </code></pre>
+
+  <h2>Status Dropdown</h2>
+  <p>
+    The status dropdown is a specific implementation of the standard boostrap dropdown menu. It allows only a single selections.
+    The status dropdown uses all the standard bootstrap dropdown classes with the addition of the
+    <code>.dropdown-status</code> class on the
+    <code>.dropdown</code> element as well.
+  </p>
+  <p>
+    The
+    <code>data-toggle="toggle"</code> attribute should be set on an icon using one of the defined status bookmark icons from FontAwesome 5. This icon should
+    reflect the currently selected status icon. When a new status is selected from the dropdown, the icon marked by the
+    <code>data-toggle</code> attribute will be changed to match the selected status icon.
+  </p>
+
+  <div class="example">
+    <div id="status1" class="dropdown dropdown-status">
+      <i class="far fa-bookmark status--unknown" data-toggle="dropdown" id="dropdownMenu1"></i>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation" class="selected">
+          <a href="#" id="relevant">
+            <i role="menuitem" class="fas fa-bookmark status--relevant"></i>
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#" id="irrelevant">
+            <i role="menuitem" class="fas fa-bookmark status--irrelevant"></i>
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#" id="unknown">
+            <i role="menuitem" class="far fa-bookmark status--unknown"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <pre class="example-code">
+    <code class="language-html">
+    <div id="status1" class="dropdown dropdown-status">
+        <i class="far fa-bookmark status--unknown" data-toggle="dropdown" id="dropdownMenu1"></i>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation" class="selected">
+            <a href="#" id="relevant"><i role="menuitem" class="fas fa-bookmark status--relevant"></i></a>
+          </li>
+          <li role="presentation">
+            <a href="#" id="irrelevant"><i role="menuitem" class="fas fa-bookmark status--irrelevant"></i></a>
+          </li>
+          <li role="presentation">
+            <a href="#" id="unknown"><i role="menuitem" class="far fa-bookmark status--unknown"></i></a>
+          </li>
+        </ul>
       </div>
-      <div class="group">
-        <div class="flag flag-default">?</div>
-        <div class="flag flag--benign-polymorphism">BP</div>
-        <div class="flag flag--artifact">A</div>
-      </div>
-      <div class="group">
-        <div class="flag flag-default flag-small">?</div>
-        <div class="flag flag-small flag--benign-polymorphism">BP</div>
-        <div class="flag flag-small flag--artifact">A</div>
+    </code>
+  </pre>
+
+  <h3>Usage</h3>
+  <p>The status dropdown can be activated using the following javascript</p>
+  <pre><code class="language-javascript">
+    $('.dropdown-status').statusDropdown();
+  </code></pre>
+
+  <h3>Events</h3>
+  <p>
+    The status dropdown emits the same events as the standard bootstrap dropdown but also emits an event when items are selected.
+  </p>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Event Type</th>
+        <th>Description</th>
+        <th>Params</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>pdx.statusdropdown.change</td>
+        <td>This event fires immediately when an item in the
+          <code>.dropdown-menu</code> is selected</td>
+        <td>
+          <ul>
+            <li>
+              <code>{Event}</code> - the event object</li>
+            <li>
+              <code>{String}</code> - the
+              <code>id</code> of the selected item</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pre><code class="language-javascript">
+    $('.dropdown-flag').on('pdx.flagdropdown.change', function(ev, selectedId) {
+      // ...
+    });
+  </code></pre>
+
+  <h2>Toggle Switch</h2>
+  <p>
+    The toggle switch is a component for capturing and changing the on/off semantic state of something. It has similar meaning
+    to a checkbox, which should represent the existence or non-existence (true/false, on/off) state of some aspect of an
+    application or interface.
+  </p>
+
+  <div class="example">
+    <div class="form-group">
+      <div class="toggle checked">
+        <label for="myToggle1">Show on report</label>
+        <input type="checkbox" class="toggle-switch" name="myToggle1" />
       </div>
     </div>
-    <pre class="example-code">
-<code class="language-html">
-<div class="group">
-  <span class="flag flag-large flag-default">?</span>
-  <span class="flag flag-large flag--benign-polymorphism">BP</span>
-  <span class="flag flag-large flag--artifact">A</span>
-</div>
-<div class="group">
-  <div class="flag flag-default">?</div>
-  <div class="flag flag--benign-polymorphism">BP</div>
-  <div class="flag flag--artifact">A</div>
-</div>
-<div class="group">
-  <div class="flag flag-default flag-small">?</div>
-  <div class="flag flag-small flag--benign-polymorphism">BP</div>
-  <div class="flag flag-small flag--artifact">A</div>
-</div>
-</code>
-</pre>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
-    <script src="js/index.js"></script>
+    <div class="form-group">
+      <div class="toggle">
+        <label for="myToggle2">Turn on wi-fi</label>
+        <input type="checkbox" class="toggle-switch" name="myToggle2" />
+      </div>
+    </div>
+  </div>
+  <pre class="example-code">
+    <code class="language-html">
+      <div class="form-group">
+        <div class="toggle checked">
+          <label for="myToggle2">Show on report</label>
+          <input type="checkbox" class="toggle-switch" name="myToggle2" />
+        </div>
+      </div>
+    </code>
+  </pre>
+
+  <h3>Usage</h3>
+  <p>The toggle switch can be activated using the following javascript</p>
+  <pre><code class="language-javascript">
+    $('.toggle').statusDropdown();
+  </code></pre>
+
+  <h3>Events</h3>
+  <p>
+    The toggle switch emits a single change event whenever its state is toggled.
+  </p>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Event Type</th>
+        <th>Description</th>
+        <th>Params</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>pdx.toggle.change</td>
+        <td>This event fires immediately when the toggle state is changed</td>
+        <td>
+          <ul>
+            <li>
+              <code>{Event}</code> - the event object</li>
+            <li>
+              <code>{Boolean}</code> - the new state of the toggle switch, true or false</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pre><code class="language-javascript">
+    $('.toggle').on('pdx.toggle.change', function(ev, state) {
+      // ...
+    });
+  </code></pre>
+
+  <!-- scripts -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
+  <script src='https://unpkg.com/@pieriandx/pdx-bootstrap@1.0.4/dist/pdx-bootstrap.js'></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>
