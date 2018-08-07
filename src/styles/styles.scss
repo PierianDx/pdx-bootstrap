@@ -9,34 +9,49 @@
  * Flag styles
  */
 .flag {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
   position: relative;
-  background-color: #ddd;
-  color: #4f4f4f;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
   border-radius: 4px;
-
-  span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  width: 2em;
+  height: 2em;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 2;
 }
 
-/**
- * Specific flags
- */
+.flag-large {
+  width: 2.25em;
+  height: 2.25em;
+  font-size: 1.25em;
+  font-weight: 400;
+  line-height: 2.25;
+}
+
+.flag-small {
+  width: 1.75em;
+  height: 1.75em;
+  font-size: 0.75em;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.flag-default {
+  color: get-color($flag-colors, "default");
+  background-color: get-color($flag-colors, "default", "background-color");
+}
 .flag--artifact {
-  //   background-color: #f2c94c;
-  //   color: #4f4f4f;
-  background-color: color("flag", "artifact", "background");
-  color: color("flag", "artifact", "color");
+  color: get-color($flag-colors, "artifact");
+  background-color: get-color($flag-colors, "artifact", "background-color");
 }
 .flag--benign-polymorphism {
-  //   background-color: #2d9cdb;
-  //   color: #fff;
-  background-color: color("flag", "benign-polymorphism", "background");
-  color: color("flag", "benign-polymorphism", "color");
+  color: get-color($flag-colors, "benign-polymorphism");
+  background-color: get-color(
+    $flag-colors,
+    "benign-polymorphism",
+    "background-color"
+  );
 }

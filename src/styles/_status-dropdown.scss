@@ -6,13 +6,13 @@
 
 /* Individual icon styles */
 .status--relevant {
-  color: color("status", "relevant");
+  color: get-color($status-colors, "relevant");
 }
 .status--irrelevant {
-  color: color("status", "irrelevant");
+  color: get-color($status-colors, "irrelevant");
 }
 .status--unknown {
-  color: color("status", "unknown");
+  color: get-color($status-colors, "unknown");
 }
 .fa-bookmark {
   position: relative;

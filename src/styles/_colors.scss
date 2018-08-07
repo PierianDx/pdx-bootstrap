@@ -1,29 +1,32 @@
 // colors.scss
 // Standardized colors
 
-$colors: (
-  status: (
-    relevant: (
-      color: #6fcf97,
-      background: transparent
-    ),
-    irrelevant: (
-      color: #f37a7a,
-      background: transparent
-    ),
-    unknown: (
-      color: #dddddd,
-      background: transparent
-    )
+$status-colors: (
+  "relevant": (
+    "color": #6fcf97,
+    "background-color": transparent
   ),
-  flag: (
-    artifact: (
-      color: #4f4f4f,
-      background: #f2c94c
-    ),
-    benign-polymorphism: (
-      color: #fff,
-      background: #2d9cdb
-    )
+  "irrelevant": (
+    "color": #f37a7a,
+    "background-color": transparent
+  ),
+  "unknown": (
+    "color": #ddd,
+    "background-color": transparent
+  )
+);
+
+$flag-colors: (
+  "default": (
+    "color": #fff,
+    "background-color": #777
+  ),
+  "artifact": (
+    "color": #4f4f4f,
+    "background-color": #f2c94c
+  ),
+  "benign-polymorphism": (
+    "color": #fff,
+    "background-color": #2d9cdb
   )
 );

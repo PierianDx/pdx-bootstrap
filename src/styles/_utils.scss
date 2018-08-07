@@ -3,3 +3,7 @@
 @function color($type, $name, $kind: "color") {
   @return map-get(map-get(map-get($colors, $type), $name), $kind);
 }
+
+@function get-color($map, $name, $prop: "color") {
+  @return map-get(map-get($map, $name), $prop);
+}
