@@ -27,6 +27,7 @@ class FlagDropdown {
       "pdx.flagdropdown.change",
       this.$element.data("selected")
     );
+    ev.preventDefault();
   }
 
   toggleItem($item) {
