@@ -1,0 +1,35 @@
+{
+  "name": "pdx-bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "concurrently": "^3.6.1",
+    "husky": "^1.0.0-rc.13",
+    "node-sass": "^4.9.2"
+  },
+  "scripts": {
+    "build:sass": "node-sass -r css/style.scss -o css/",
+    "watch:sass": "npm run build:sass -- -w",
+    "dev": "concurrently \"npm run watch:sass\" \"browser-sync start --server --files .\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build:sass"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PierianDx/pdx-bootstrap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PierianDx/pdx-bootstrap/issues"
+  },
+  "homepage": "https://github.com/PierianDx/pdx-bootstrap#readme"
+}
