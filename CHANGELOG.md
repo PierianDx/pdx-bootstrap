@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/PierianDx/pdx-bootstrap/compare/v1.0.5...v1.0.6) (2018-08-07)
+
+
+### Bug Fixes
+
+* **flag dropdown:** fixed event handling for flag dropdown ([26cfc5e](https://github.com/PierianDx/pdx-bootstrap/commit/26cfc5e))
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/PierianDx/pdx-bootstrap/compare/v1.0.4...v1.0.5) (2018-08-07)
 
