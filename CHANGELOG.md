@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/PierianDx/pdx-bootstrap/compare/v1.0.6...v1.1.0) (2018-08-12)
+
+
+### Features
+
+* **dropdown-select:** added new component for select dropdowns. ([0afc469](https://github.com/PierianDx/pdx-bootstrap/commit/0afc469))
+
+
+
 <a name="1.0.6"></a>
 ## [1.0.6](https://github.com/PierianDx/pdx-bootstrap/compare/v1.0.5...v1.0.6) (2018-08-07)
 
