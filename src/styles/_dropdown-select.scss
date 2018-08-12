@@ -1,0 +1,37 @@
+/* to use FontAwesome i pseudo elements */
+.icon::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dropdown Select - Component Styling */
+.dropdown-select {
+  > .dropdown-menu {
+    > li {
+      position: relative;
+
+      &.selected {
+        &:after {
+          display: inline-block;
+          font-style: normal;
+          font-variant: normal;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          content: "\f00c";
+          position: absolute;
+          top: 50%;
+          right: 8px;
+          transform: translateY(-50%);
+        }
+      }
+      > a {
+        padding-right: 32px;
+      }
+    }
+  }
+}

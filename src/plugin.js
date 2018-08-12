@@ -4,6 +4,8 @@ import $ from "jquery";
  * Generate a jQuery plugin
  * @param pluginName [string] Plugin name
  * @param className [object] Class of the plugin
+ * @param dataname [string] optional data name for this component (pdx.<pluginname> lowercase by default)
+ * @param apiInitCallback [function] a callback to assign on page load to initialize plugins via data-* API
  * @param shortHand [bool] Generate a shorthand as $.pluginName
  *
  * @example
@@ -23,6 +25,7 @@ export default function plugin(
   pluginName,
   className,
   dataname,
+  apiInitCallback,
   shortHand = false
 ) {
   let dataName = `pdx.${dataname || pluginName.toLowerCase()}`;
@@ -56,4 +59,9 @@ export default function plugin(
 
   // - No conflict
   $.fn[pluginName].noConflict = () => ($.fn[pluginName] = old);
+
+  // Data-* API initialization (if any)
+  if (apiInitCallback && typeof apiInitCallback === "function") {
+    $(document).ready(apiInitCallback.bind(null, $));
+  }
 }
