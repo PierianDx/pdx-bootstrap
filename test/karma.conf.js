@@ -10,7 +10,12 @@ module.exports = function(config) {
     webpack: webpackConfig,
     preprocessors: {
       "src/index.js": ["webpack"],
-      "test/**/*.js": ["webpack"]
+      "test/**/*.js": ["webpack"],
+      "test/fixtures/*.html": ["html2js"]
+    },
+    html2JsPreprocessor: {
+      stripPrefix: "test/"
+      //     prependPrefix: 'served/'
     },
     babelPreprocessor: {
       options: {
@@ -32,6 +37,7 @@ module.exports = function(config) {
       "node_modules/bootstrap/dist/js/bootstrap.min.js",
       "node_modules/@babel/polyfill/dist/polyfill.js",
       "dist/pdx-bootstrap.js",
+      "test/**/*.html",
       "test/**/*.js"
     ],
     // reporters: ["progress"],
