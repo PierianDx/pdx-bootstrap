@@ -23,7 +23,6 @@ class SelectDropdown {
   }
 
   handleSelection(ev) {
-    console.log("handleSelection");
     var $target = $(ev.currentTarget);
     this.toggleItem($target);
     this.setSelected();
@@ -65,8 +64,9 @@ SelectDropdown.DEFAULTS = {};
 
 // Data-* API initialiization
 function apiInit($) {
-  $('.dropdown-select > *[data-toggle="dropdown"]')
+  $('.dropdown-select > [data-toggle="dropdown"]')
     .map((index, toggle) => {
+      console.log("-> activating ", $(toggle).attr("id"));
       return $(toggle).closest(".dropdown-select");
     })
     .selectDropdown();
