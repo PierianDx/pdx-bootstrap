@@ -40,6 +40,8 @@ class StatusDropdown {
 
   setSelected($selected) {
     this.$element.data("selected", $selected.attr("id"));
+    this.$element.find(".dropdown-menu > li").removeClass("selected");
+    $selected.closest("li").addClass("selected");
     // Set the toggle to reflect the selected item
     this.$element.find("[data-toggle]").get(0).className = $selected
       .find("i")
