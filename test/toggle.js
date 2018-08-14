@@ -30,7 +30,6 @@ describe("Toggle Switch", () => {
     let call = 0;
     const spy = sinon.spy(function(ev, state) {
       // validate the first option is selected
-      console.log("state:", state, typeof state);
       assert.equal(state, validate[call++], "correct state is set");
       if (call == validate.length) {
         done();
