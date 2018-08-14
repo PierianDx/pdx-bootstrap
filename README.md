@@ -1,6 +1,7 @@
 # pdx-bootstrap
 
 [![npm version](https://badge.fury.io/js/%40pieriandx%2Fpdx-bootstrap.svg)](https://badge.fury.io/js/%40pieriandx%2Fpdx-bootstrap)
+[![travis build](https://travis-ci.org/PierianDx/pdx-bootstrap.png?branch=master)](https://travis-ci.org/PierianDx/pdx-bootstrap)
 
 Read documentation at [https://pieriandx.github.io/pdx-bootstrap/](https://pieriandx.github.io/pdx-bootstrap/).
 
