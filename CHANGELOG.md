@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/PierianDx/pdx-bootstrap/compare/v1.1.1...v1.1.2) (2018-08-14)
+
+
+### Bug Fixes
+
+* **travis:** update node versions ([7575f41](https://github.com/PierianDx/pdx-bootstrap/commit/7575f41))
+* **travis:** updated travis config ([4325a63](https://github.com/PierianDx/pdx-bootstrap/commit/4325a63))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/PierianDx/pdx-bootstrap/compare/v1.1.0...v1.1.1) (2018-08-12)
 
