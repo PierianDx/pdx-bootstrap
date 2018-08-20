@@ -31,14 +31,22 @@ describe("Dropdown Flag", () => {
   it("should allow single selection only", done => {
     $(".dropdown-flag").flagDropdown();
 
-    // valid sequence of selected options
+    // valid sequence of selected options and related targets clicked on
     const validate = ["option 1", undefined, "option 2", undefined];
+    const related = ["option 1", "option 1", "option 2", "option 2"];
     let call = 0;
     const spy = sinon.spy(function(ev) {
       // validate the first option is selected
       const selected = Array.prototype.slice.call(arguments, 1);
+      assert.exists(ev.relatedTarget);
+      assert.equal(
+        $(ev.relatedTarget).attr("id"),
+        related[call],
+        "related target matches correct option"
+      );
       assert.isAtMost(selected.length, 1, "only one option selected");
-      assert.equal(selected[0], validate[call++], "correct option selected");
+      assert.equal(selected[0], validate[call], "correct option selected");
+      call++;
       if (call == validate.length) {
         done();
       }
@@ -60,11 +68,19 @@ describe("Dropdown Flag", () => {
 
     // valid sequence of selected options
     const validate = [["option 1"], ["option 1", "option 2"], ["option 1"]];
+    const related = ["option 1", "option 2", "option 2"];
     let call = 0;
     const spy = sinon.spy(function(ev) {
       // validate the first option is selected
       const selected = Array.prototype.slice.call(arguments, 1);
-      assert.deepEqual(selected, validate[call++], "correct options selected");
+      assert.exists(ev.relatedTarget);
+      assert.equal(
+        $(ev.relatedTarget).attr("id"),
+        related[call],
+        "related target matches correct option"
+      );
+      assert.deepEqual(selected, validate[call], "correct options selected");
+      call++;
       if (call == validate.length) {
         done();
       }

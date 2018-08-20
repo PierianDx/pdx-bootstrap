@@ -35,6 +35,7 @@ describe("Status Flag", () => {
 
     // valid sequence of selected options
     const validate = ["option 1", "option 2", "option 3"];
+    const related = ["option 1", "option 2", "option 3"];
     let call = 0;
     const spy = sinon.spy(function(ev) {
       // get selected element child element
@@ -43,14 +44,21 @@ describe("Status Flag", () => {
       const trigger = $root.find('[data-toggle="dropdown"]').get(0);
       // validate the first option is selected
       const selected = Array.prototype.slice.call(arguments, 1);
+      assert.exists(ev.relatedTarget);
+      assert.equal(
+        $(ev.relatedTarget).attr("id"),
+        related[call],
+        "related target matches correct option"
+      );
       assert.equal(selected.length, 1, "only one option selected");
-      assert.equal(selected[0], validate[call++], "correct option selected");
+      assert.equal(selected[0], validate[call], "correct option selected");
       // ensure trigger icon matches classes from selected <a> tag
       assert.equal(
         trigger.className,
         target.className,
         "toggle matches selected"
       );
+      call++;
       if (call == validate.length) {
         done();
       }

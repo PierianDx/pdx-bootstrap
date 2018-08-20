@@ -31,10 +31,10 @@ class StatusDropdown {
   handleSelection(ev) {
     var $target = $(ev.currentTarget);
     this.setSelected($target);
-    this.$element.trigger(
-      "pdx.statusdropdown.change",
-      this.$element.data("selected")
-    );
+    var changeEvent = $.Event("pdx.statusdropdown.change", {
+      relatedTarget: ev.currentTarget
+    });
+    this.$element.trigger(changeEvent, this.$element.data("selected"));
     ev.preventDefault();
   }
 
