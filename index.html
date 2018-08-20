@@ -225,6 +225,9 @@
   <h3>Events</h3>
   <p>
     The flag dropdown emits the same events as the standard bootstrap dropdown but also emits an event when items are selected.
+    The first argument to the event handler is always the Event object. All dropdown events are fired at the
+    <code>.dropdown-menu</code>’s parent element and have a
+    <code>relatedTarget</code> property, whose value is the toggling anchor element.
   </p>
 
   <table class="table table-bordered table-striped">
@@ -256,6 +259,7 @@
   <pre><code class="language-javascript">
     $('.dropdown-flag').on('pdx.flagdropdown.change', function(ev /* selected id, ... */) {
       const ids = Array.from(arguments).slice(1);  // get selected ids as an array
+      const triggeringElement = ev.relatedTarget;  // DOM element that was 'clicked' triggering the change
       // ...
     });
   </code></pre>
@@ -324,6 +328,9 @@
   <h3>Events</h3>
   <p>
     The status dropdown emits the same events as the standard bootstrap dropdown but also emits an event when items are selected.
+    All dropdown events are fired at the
+    <code>.dropdown-menu</code>’s parent element and have a
+    <code>relatedTarget</code> property, whose value is the toggling anchor element.
   </p>
 
   <table class="table table-bordered table-striped">
@@ -354,6 +361,7 @@
 
   <pre><code class="language-javascript">
     $('.dropdown-flag').on('pdx.flagdropdown.change', function(ev, selectedId) {
+      var triggeringElement = ev.relatedTarget;  // DOM element 'clicked' that triggered event
       // ...
     });
   </code></pre>
@@ -428,7 +436,7 @@
   </pre>
 
   <h3>Usage</h3>
-  <p>The status dropdown can be activated with the
+  <p>The dropdown select can be activated with the
     <code>data-*</code> API as mentioned above or by using the following javascript</p>
   <pre><code class="language-javascript">
     $('.dropdown-select').selectDropdown();
@@ -436,7 +444,10 @@
 
   <h3>Events</h3>
   <p>
-    The status dropdown emits the same events as the standard bootstrap dropdown but also emits an event when items are selected.
+    The dropdown select emits the same events as the standard bootstrap dropdown but also emits an event when items are selected.
+    All dropdown events are fired at the
+    <code>.dropdown-menu</code>’s parent element and have a
+    <code>relatedTarget</code> property, whose value is the toggling anchor element.
   </p>
 
   <table class="table table-bordered table-striped">
@@ -466,8 +477,9 @@
   </table>
 
   <pre><code class="language-javascript">
-    $('.dropdown-flag').on('pdx.dropdown-select.change', function(ev, /* itemId, ... */) {
+    $('.dropdown-select').on('pdx.dropdown-select.change', function(ev, /* itemId, ... */) {
       const selected = Array.from(arguments).slice(1);
+      const triggeringElement = ev.relatedTarget; // DOM element 'click'ed that triggered event
       // do something with the ids in `selected`
     });
   </code></pre>
