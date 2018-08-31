@@ -34,9 +34,9 @@
   <div class="callout callout-warning">
     <h4>Future Spec</h4>
     <p>The typography styling here is currently not included in the
-      <code>pdx-bootstrap</code> library. This is intended for a future release as we make efforts toward a more complete style and design guide to
-      give consistency across development. You can copy the styles from this page directly if you would like to try them,
-      however.
+      <code>pdx-bootstrap</code> library. This is intended for a future release as we make efforts toward a more complete
+      style and design guide to give consistency across development. You can copy the styles from this page directly if you
+      would like to try them, however.
     </p>
   </div>
 
@@ -80,15 +80,18 @@
     <em>
       <b>16px</b> by default</em>).
   </p>
+  <p>
+    Pierian uses the <code>Open Sans</code> font for body copy and text.
+  </p>
 
   <div class="example">
-    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-      ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus
-      auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-      Donec ullamcorper nulla non metus auctor fringilla.</p>
-    <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis
-      mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non
+      metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec
+      elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus.
+      Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
   </div>
   <pre class="example-code">
     <code class="language-html">
@@ -99,7 +102,43 @@
   <h1>Components</h1>
   <hr/>
 
-  <h2>Status Flag</h2>
+  <h2>Status Icons</h2>
+  <p>
+    Status icons are used to represent user defined states of variants, such as <i>relevant</i>, <i>irrelevant</i>
+    and <i>unknown</i>. These can be created using the FontAwesome 5 <code>.fa-bookmark</code> icon font along with the corresponding
+    <code>.status--*</code> class.
+  </p>
+  <div class="example">
+    <i class="fas fa-bookmark status--relevant"></i>
+    <i class="fas fa-bookmark status--irrelevant"></i>
+    <i class="far fa-bookmark status--unknown"></i>
+  </div>
+  <pre class="example-code">
+    <code class="language-html">
+      <i class="fas fa-bookmark status--relevant"></i>
+      <i class="fas fa-bookmark status--irrelevant"></i>
+      <i class="far fa-bookmark status--unknown"></i>
+    </code>
+  </pre>
+
+  <h3>Disabled</h3>
+  <p>
+    Status icons can also be set to a disabled state to show they are inactive or not in use using the <code>.disabled</code>    class.
+  </p>
+  <div class="example">
+    <i class="fas fa-bookmark status--relevant disabled"></i>
+    <i class="fas fa-bookmark status--irrelevant disabled"></i>
+    <i class="far fa-bookmark status--unknown disabled"></i>
+  </div>
+  <pre class="example-code">
+    <code class="language-html">
+      <i class="fas fa-bookmark status--relevant disabled"></i>
+      <i class="fas fa-bookmark status--irrelevant disabled"></i>
+      <i class="far fa-bookmark status--unknown disabled"></i>
+    </code>
+  </pre>
+
+  <h2>Tags (Flags)</h2>
   <p>
     Use
     <code>.flag</code> for a fixed width/height label of one or two letters to denote a status flag.
@@ -121,23 +160,32 @@
   <p>You can use
     <code>.flag</code>`s in various sizes as well by using the
     <code>.flag-small</code> or
-    <code>.flag-large</code>
+    <code>.flag-large</code>. There are also some predefined styles for commonly used flags, such as artifacts and benign
+    polymorphisms.
+  </p>
+  <p>
+    The 'none' flag, <code>flag--none</code>, is a special case of flag, where the text is longer than 2 letters. In this
+    case, we wrap the text in a span to allow us to size the text without modifying the flag width and height itself. This
+    approach can be used on all tags if the user wishes, simply wrap the flag text in a <code>span</code> tag.
   </p>
   <div class="example">
     <div class="group">
       <span class="flag flag-large flag-default">?</span>
       <span class="flag flag-large flag--benign-polymorphism">BP</span>
       <span class="flag flag-large flag--artifact">A</span>
+      <span class="flag flag-large flag--none"><span>none</span></span>
     </div>
     <div class="group">
       <div class="flag flag-default">?</div>
       <div class="flag flag--benign-polymorphism">BP</div>
       <div class="flag flag--artifact">A</div>
+      <div class="flag flag--none"><span>none</span></div>
     </div>
     <div class="group">
       <div class="flag flag-default flag-small">?</div>
       <div class="flag flag-small flag--benign-polymorphism">BP</div>
       <div class="flag flag-small flag--artifact">A</div>
+      <div class="flag flag-small flag--none"><span>none</span></div>
     </div>
   </div>
   <pre class="example-code">
@@ -146,18 +194,44 @@
       <span class="flag flag-large flag-default">?</span>
       <span class="flag flag-large flag--benign-polymorphism">BP</span>
       <span class="flag flag-large flag--artifact">A</span>
+      <span class="flag flag-large flag--none"><span>none</span></span>
     </div>
     <div class="group">
       <div class="flag flag-default">?</div>
       <div class="flag flag--benign-polymorphism">BP</div>
       <div class="flag flag--artifact">A</div>
+      <div class="flag flag--none"><span>none</span></div>
     </div>
     <div class="group">
       <div class="flag flag-default flag-small">?</div>
       <div class="flag flag-small flag--benign-polymorphism">BP</div>
       <div class="flag flag-small flag--artifact">A</div>
+      <div class="flag flag-small flag--none"><span>none</span></div>
     </div>
     </code>
+</pre>
+
+  <h3>Disabled Flags</h3>
+  <p>
+    <code>.flag</code> elements can also be disabled using the <code>.disabled</code> class.
+  </p>
+  <div class="example">
+    <div class="group">
+      <div class="flag flag-default disabled">?</div>
+      <div class="flag flag--benign-polymorphism disabled">BP</div>
+      <div class="flag flag--artifact disabled">A</div>
+      <div class="flag flag--none disabled"><span>none</span></div>
+    </div>
+  </div>
+  <pre class="example-code">
+  <code class="language-html">
+  <div class="group">
+    <div class="flag flag-default disabled">?</div>
+    <div class="flag flag--benign-polymorphism disabled">BP</div>
+    <div class="flag flag--artifact disabled">A</div>
+    <div class="flag flag--none disabled"><span>none</span></div>
+  </div>
+  </code>
 </pre>
 
   <h2>Flag Dropdown</h2>
@@ -269,8 +343,9 @@
   </p>
   <p>
     The
-    <code>data-toggle="toggle"</code> attribute should be set on an icon using one of the defined status bookmark icons from FontAwesome 5. This icon should
-    reflect the currently selected status icon. When a new status is selected from the dropdown, the icon marked by the
+    <code>data-toggle="toggle"</code> attribute should be set on an icon using one of the defined status bookmark icons from
+    FontAwesome 5. This icon should reflect the currently selected status icon. When a new status is selected from the dropdown,
+    the icon marked by the
     <code>data-toggle</code> attribute will be changed to match the selected status icon.
   </p>
 
@@ -364,6 +439,7 @@
     to a checkbox, which should represent the existence or non-existence (true/false, on/off) state of some aspect of an
     application or interface.
   </p>
+  <p>You can disable a toggle switch using the <code>.disabled</code> class on the <code>.toggle</code> element.</p>
 
   <div class="example">
     <div class="form-group">
@@ -378,12 +454,42 @@
         <input type="checkbox" class="toggle-switch" name="myToggle2" />
       </div>
     </div>
+    <div class="form-group">
+      <div class="toggle checked disabled">
+        <label for="myToggle1">Show on report</label>
+        <input type="checkbox" class="toggle-switch" name="myToggle1" />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="toggle disabled">
+        <label for="myToggle2">Turn on wi-fi</label>
+        <input type="checkbox" class="toggle-switch" name="myToggle2" />
+      </div>
+    </div>
   </div>
   <pre class="example-code">
     <code class="language-html">
       <div class="form-group">
         <div class="toggle checked">
           <label for="myToggle2">Show on report</label>
+          <input type="checkbox" class="toggle-switch" name="myToggle2" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="toggle">
+          <label for="myToggle2">Turn on wi-fi</label>
+          <input type="checkbox" class="toggle-switch" name="myToggle2" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="toggle checked disabled">
+          <label for="myToggle1">Show on report</label>
+          <input type="checkbox" class="toggle-switch" name="myToggle1" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="toggle disabled">
+          <label for="myToggle2">Turn on wi-fi</label>
           <input type="checkbox" class="toggle-switch" name="myToggle2" />
         </div>
       </div>
