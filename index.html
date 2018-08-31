@@ -299,6 +299,9 @@
   <h3>Events</h3>
   <p>
     The flag dropdown emits the same events as the standard bootstrap dropdown but also emits an event when items are selected.
+    The first argument to the event handler is always the Event object. All dropdown events are fired at the
+    <code>.dropdown-menu</code>’s parent element and have a
+    <code>relatedTarget</code> property, whose value is the toggling anchor element.
   </p>
 
   <table class="table table-bordered table-striped">
@@ -330,6 +333,7 @@
   <pre><code class="language-javascript">
     $('.dropdown-flag').on('pdx.flagdropdown.change', function(ev /* selected id, ... */) {
       const ids = Array.from(arguments).slice(1);  // get selected ids as an array
+      const triggeringElement = ev.relatedTarget;  // DOM element that was 'clicked' triggering the change
       // ...
     });
   </code></pre>
@@ -399,6 +403,9 @@
   <h3>Events</h3>
   <p>
     The status dropdown emits the same events as the standard bootstrap dropdown but also emits an event when items are selected.
+    All dropdown events are fired at the
+    <code>.dropdown-menu</code>’s parent element and have a
+    <code>relatedTarget</code> property, whose value is the toggling anchor element.
   </p>
 
   <table class="table table-bordered table-striped">
@@ -429,7 +436,126 @@
 
   <pre><code class="language-javascript">
     $('.dropdown-flag').on('pdx.flagdropdown.change', function(ev, selectedId) {
+      var triggeringElement = ev.relatedTarget;  // DOM element 'clicked' that triggered event
       // ...
+    });
+  </code></pre>
+
+  <h2>Dropdown Select</h2>
+  <p>
+    The
+    <code>.dropdown-select</code> class turns a regular Bootstrap dropdown into a single or multiselect dropdown. It uses the standard bootstrap dropdown
+    class plus a
+    <code>.dropdown-select</code> class on the parent along with the traditional
+    <code>.dropdown</code> class.
+  </p>
+  <p>To specify single or multiselect use the
+    <code>data-select-multiple</code> attribute on the parent element. Leaving it off will default the component to function as a single select dropdown.
+    You can also set
+    <code>data-select-multiple="false"</code> for single select. To use as a multiple select dropdown add the
+    <code>data-select-multiple="true"</code> attribute to the parent element.
+  </p>
+  <h3>Initialization</h3>
+  <p>
+    The
+    <code>data-toggle="toggle"</code> attribute can be added to the element within the
+    <code>.dropdown-select</code> parent element that will act as the trigger. If present, this component will be initialized on page load via the
+    <code>data-*</code> API.
+  </p>
+
+  <div class="example">
+    <div class="dropdown dropdown-select" data-select-multiple="true">
+      <i id="dropdownMenu1" data-toggle="dropdown" class="fas fa-plus-circle"></i>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation" class="selected">
+          <a role="menuitem" tabindex="-1" href="#" id="option 1">
+            Option 1
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#" id="option 2">
+            Option 2
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#" id="option 3">
+            Option 3
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <pre class="example-code">
+    <code class="language-html">
+    <div class="dropdown dropdown-select" data-select-multiple="true">
+      <i id="dropdownMenu1" data-toggle="dropdown" class="fas fa-plus-circle"></i>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation" class="selected">
+          <a role="menuitem" tabindex="-1" href="#" id="option 1">
+            Option 1
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#" id="option 2">
+            Option 2
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#" id="option 3">
+            Option 3
+          </a>
+        </li>
+      </ul>
+    </div>
+    </code>
+  </pre>
+
+  <h3>Usage</h3>
+  <p>The dropdown select can be activated with the
+    <code>data-*</code> API as mentioned above or by using the following javascript</p>
+  <pre><code class="language-javascript">
+    $('.dropdown-select').selectDropdown();
+  </code></pre>
+
+  <h3>Events</h3>
+  <p>
+    The dropdown select emits the same events as the standard bootstrap dropdown but also emits an event when items are selected.
+    All dropdown events are fired at the
+    <code>.dropdown-menu</code>’s parent element and have a
+    <code>relatedTarget</code> property, whose value is the toggling anchor element.
+  </p>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Event Type</th>
+        <th>Description</th>
+        <th>Params</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>pdx.dropdown-select.change</td>
+        <td>This event fires immediately when an item in the
+          <code>.dropdown-menu</code> is selected</td>
+        <td>
+          <ul>
+            <li>
+              <code>{Event}</code> - the event object</li>
+            <li>
+              <code>{String}</code> - the
+              <code>id</code> of the selected item. Multiple arguments are passed for multiselect.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pre><code class="language-javascript">
+    $('.dropdown-select').on('pdx.dropdown-select.change', function(ev, /* itemId, ... */) {
+      const selected = Array.from(arguments).slice(1);
+      const triggeringElement = ev.relatedTarget; // DOM element 'click'ed that triggered event
+      // do something with the ids in `selected`
     });
   </code></pre>
 
