@@ -11,7 +11,7 @@ $status-colors: (
     "background-color": transparent
   ),
   "unknown": (
-    "color": #ddd,
+    "color": #828282,
     "background-color": transparent
   )
 );
@@ -20,6 +20,10 @@ $flag-colors: (
   "default": (
     "color": #fff,
     "background-color": #777
+  ),
+  "none": (
+    "color": #fff,
+    "background-color": #828282
   ),
   "artifact": (
     "color": #4f4f4f,

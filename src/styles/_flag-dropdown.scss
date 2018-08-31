@@ -12,7 +12,7 @@
  */
 .dropdown-flag {
   [data-toggle] {
-    color: #bdbdbd;
+    color: #828282;
   }
 
   &:hover {
@@ -47,32 +47,3 @@
     }
   }
 }
-
-//
-// .dropdown-flag [data-toggle]:hover {
-//   color: #828282;
-// }
-// .dropdown-flag > .dropdown-menu > li {
-//   position: relative;
-// }
-// .dropdown-flag > .dropdown-menu > li > a {
-//   padding-right: 32px;
-// }
-// .dropdown-flag > .dropdown-menu > li.selected:after {
-//   display: inline-block;
-//   font-style: normal;
-//   font-variant: normal;
-//   text-rendering: auto;
-//   -webkit-font-smoothing: antialiased;
-//   font-family: "Font Awesome 5 Free";
-//   font-weight: 900;
-//   content: "\f00c";
-//   position: absolute;
-//   top: 50%;
-//   right: 8px;
-//   transform: translateY(-50%);
-// }
-
-// .dropdown-menu > li > a > .flag {
-//   vertical-align: middle;
-// }

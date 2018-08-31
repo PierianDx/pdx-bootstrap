@@ -13,10 +13,6 @@ class SelectDropdown {
     if ($selected.length) {
       // Set any initial selected (last one wins)
       this.setSelected($selected);
-      // this.$element.trigger(
-      //   "pdx.dropdown-select.change",
-      //   this.$element.data("selected")
-      // );
     }
     // Handle delegated clicks on dropdown-menu item links
     $menu.on("click", "a", this.handleSelection.bind(this));
@@ -30,10 +26,6 @@ class SelectDropdown {
       relatedTarget: ev.currentTarget
     });
     this.$element.trigger(changeEvent, this.$element.data('selected'));
-    // this.$element.trigger(
-    //   "pdx.dropdown-select.change",
-    //   this.$element.data("selected")
-    // );
     ev.preventDefault();
   }
 

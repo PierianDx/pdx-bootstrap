@@ -21,6 +21,20 @@
   font-size: 1em;
   font-weight: 400;
   line-height: 2;
+
+  > span {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.flag[disabled],
+.flag.disabled {
+  opacity: 0.5;
+  filter: grayscale(1);
 }
 
 .flag-large {
@@ -46,6 +60,13 @@
 .flag--artifact {
   color: get-color($flag-colors, "artifact");
   background-color: get-color($flag-colors, "artifact", "background-color");
+}
+.flag--none {
+  color: get-color($flag-colors, "none");
+  background-color: get-color($flag-colors, "none", "background-color");
+  > span {
+    font-size: 0.6em;
+  }
 }
 .flag--benign-polymorphism {
   color: get-color($flag-colors, "benign-polymorphism");
