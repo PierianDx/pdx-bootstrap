@@ -3,8 +3,13 @@
  *
  */
 .toggle-switch {
+  position: absolute;
+  left: -5px;
+  bottom: -1em;
   width: 0px;
   height: 0px;
+  max-width: 0px;
+  max-height: 0px;
   opacity: 0;
 }
 
